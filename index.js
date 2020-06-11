@@ -11,6 +11,7 @@ const makeCommit = (x, y) => {
     .add(x, "w")
     .add(y, "d")
     .format();
+
   const data = {
     date: DATE
   };
@@ -19,9 +20,8 @@ const makeCommit = (x, y) => {
     simpleGit()
       .add([FILE_PATH])
       .commit(DATE, { "--date": DATE })
-      .push();
+      .rm();
   });
 };
 
-// using git-spray instead
-// https://github.com/Annihil/github-spray
+makeCommit(3, 3);
